@@ -1,0 +1,17 @@
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{"username":"root","password":"123"}
+
+
+###
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+
+{"refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0MTU0NTczMSwiaWF0IjoxNzQxNDU5MzMxLCJqdGkiOiIzNDI0MWQxYjQ4MjQ0M2MyYTBhNjg3NmM3NzBiM2Y1NSIsInVzZXJfaWQiOjF9.Eh-uBnf8eQqE5Y-4NKV88AIEk657fuJqsoxoQjDfN6s"}
+
+
+###
+GET http://127.0.0.1:8000/
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxNDU2OTQzLCJpYXQiOjE3NDE0NTY2NDMsImp0aSI6IjA1YjY4OGY2NGE4YTQ0NzlhN2I4MmI5YTEwYjA5OWM1IiwidXNlcl9pZCI6MX0.4bLetV-rV3rWK5Pxm_YexXDqsVEvaC1cGXIMb0Fg8OM
