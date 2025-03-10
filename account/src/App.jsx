@@ -19,23 +19,37 @@ function App() {
           }
         }
         )
-
+        console.log(response.data)
+        setMessage(response.data)
       } catch (error) {
-      }
-      if (response.stutus !== 200) {
         try {
-          const response = await axios('http://127.0.0.1:8000/api/token/refresh/',
-            { refresh: token.refresh },
+          const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/',
+            { "refresh": token.refresh },
             {
               headers: { 'Content-Type': 'application/json' }
             }
           )
           const access = response.data
+          console.log(response.data)
           setToken(prev => ({ ...prev, access: access }))
+          try {
+            const response = await axios('http://127.0.0.1:8000/', {
+              headers: {
+                Authorization: `Bearer ${token.access}`
+              }
+            }
+            )
+            console.log(response.data)
+            setMessage(response.data)
+          } catch (error) {
+          }
         } catch (e) {
 
         }
       }
+      // if (response.stutus !== 200) {
+
+      // }
     } else {
       console.log(token)
     }
